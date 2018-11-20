@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>미로게시판</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+
+    <form id="formtag" method="post" action="/writing">
+      <div class="form-group">
+        <label>글쓰기</label>
+        <hr>
+        <input class="form-control" id="exampleFormControlInput1" placeholder="제목을 입력해 주세요" name="title" required>
+      </div>
+
+      <div class="form-group">
+        <textarea class="form-control" placeholder="내용을 입력해 주세요" rows="6" name="content" required></textarea>
+      </div>
+    </form>
+
+    <div>
+      <a href="#" onClick="document.getElementById('formtag').submit()" class="btn btn-primary">완료</a >
+      <a href="/" class="btn btn-primary">게시판으로</a>
+    </div>
+  </div>
+</body>
+
+</html>

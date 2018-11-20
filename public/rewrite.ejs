@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>10월25일수업</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>글 수정 페이지입니다!</h2>
+
+        <form method="post" action="/rewrite/<%=result._id%>" id="formtag">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">제목</label>
+                <input type="text" name="inputTilte" class="form-control" id="exampleFormControlInput1" value="<%=result.title%>"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">작성자</label>
+                <input type="text" name="inputName" class="form-control" id="exampleFormControlInput1" value="<%=result.name%>"
+                    readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">내용</label>
+                <textarea class="form-control" name="inputContent" id="exampleFormControlTextarea1" rows="10"
+                    placeholder="<%=result.content%>"></textarea>
+            </div>
+        </form>
+
+        <div style="text-align : right;">
+            <a href="/"><button class="btn btn-secondary btn-lg">목록으로가기</button></a>
+            <a href="#" onClick="document.getElementById('formtag').submit()"><button class="btn btn-secondary btn-lg">수정하기</button></a>
+        </div>
+</body>
+
+</html>

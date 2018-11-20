@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>미로게시판</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+    crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+      <%if(user !== undefined){%>
+        <%=user%>님 환영합니다.
+        <form method="post" action='/logout'>
+        <button style = "float:right" class="btn" type='submit'>로그오프</button>
+        </form>
+        <%}%>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">작성시간</th>
+          <th scope="col">조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(boards !== undefined) { %>
+        <% for(var i=boards.length-1; i >= 0; i--){ %>
+        <tr>
+          <th scope="row">
+            <%= i+1 %>
+          </th>
+          <td><a href="/show/<%= boards[i]._id%>">
+              <%= boards[i].title %>
+          </td>
+          <td><%=boards[i].author%></td>
+          <td>
+            <%= boards[i].created_at %>
+          </td>
+          <td>
+            <%= boards[i].hits %>
+          </td>
+        </tr>
+        <%}}%>
+      </tbody>
+    </table>
+
+    <a href="/writing" style="float:right;" class="btn btn-primary">글쓰러가기</a>
+    <div>
+</body>
+
+</html>
